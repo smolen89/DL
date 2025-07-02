@@ -48,7 +48,7 @@ public static partial class DL
     {
         logQueue.Clear();
         Settings = settings ?? GetDefaultSettings();
-        filePath = string.IsNullOrEmpty(logFilePath) ? Application.persistentDataPath + $@"\{GetCurrentTimeForFileName()}.log" : logFilePath;
+        InternalInitializePath(logFilePath);
 
         // Usunięcie nadmiarowych plików logów
         RemoveExcessLogFiles();
@@ -59,6 +59,15 @@ public static partial class DL
         {
             timer?.Change(Settings.Buffer_Timeout * 1000, Settings.Buffer_Timeout * 1000);
         }
+    }
+
+    /// <summary>
+    /// Inicjalizuje ścieżkę do pliku logów.
+    /// </summary>
+    private static void InternalInitializePath(string logFilePath)
+    {
+        // Ustawienie niestandardowej ścieżki do pliku logów
+        filePath = string.IsNullOrEmpty(logFilePath) ? Application.persistentDataPath + $@"\{GetCurrentTimeForFileName()}.log" : logFilePath;
     }
 
     /// <summary>
@@ -519,6 +528,15 @@ public static partial class DL
                 {
                     logLines.Add(logEntry);
                 }
+            }
+
+            // Sprawdzenie czy jest ustawiona ścieżka do pliku, nie wiem czemu ale czasem gubi ścieżkę,
+            // więc trzeba ją zainicjalizować ponownie, może dlatego że W UnityEditor nie ma wywołania DL.Initialize()
+            // i wtedy filePath jest pusty, a w buildzie jest ustawiona ścieżka.
+            // W buildzie jest ustawiona ścieżka w KernelInitializer.cs
+            if (string.IsNullOrEmpty(filePath))
+            {
+                InternalInitializePath(filePath);
             }
 
             // Zapis do pliku
