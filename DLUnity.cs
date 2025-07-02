@@ -52,13 +52,13 @@ public static partial class DL
 
         if (Thread.CurrentThread == mainThread)
         {
-            Line(result.ToString());
+            InternalLine(result.ToString());
         }
         else
         {
             unityContext.Post(_ =>
             {
-                Line(result.ToString());
+                InternalLine(result.ToString());
             }, null);
         }
     }
@@ -93,13 +93,13 @@ public static partial class DL
 
         if (Thread.CurrentThread == mainThread)
         {
-            Line(result.ToString().Colored(lineColor));
+            InternalLine(result.ToString().Colored(lineColor));
         }
         else
         {
             unityContext.Post(_ =>
             {
-                Line(result.ToString().Colored(lineColor));
+                InternalLine(result.ToString().Colored(lineColor));
             }, null);
         }
     }
@@ -142,13 +142,13 @@ public static partial class DL
 
         if (Thread.CurrentThread == mainThread)
         {
-            Line(result.ToString().Colored(lineColor));
+            InternalLine(result.ToString().Colored(lineColor));
         }
         else
         {
             unityContext.Post(_ =>
             {
-                Line(result.ToString().Colored(lineColor));
+                InternalLine(result.ToString().Colored(lineColor));
             }, null);
         }
     }
@@ -187,13 +187,13 @@ public static partial class DL
 
         if (Thread.CurrentThread == mainThread)
         {
-            Log(result.ToString());
+            InternalLog(result.ToString());
         }
         else
         {
             unityContext.Post(_ =>
             {
-                Log(result.ToString());
+                InternalLog(result.ToString());
             }, null);
         }
     }
@@ -236,13 +236,13 @@ public static partial class DL
 
         if (Thread.CurrentThread == mainThread)
         {
-            Log(result.ToString().Colored(defaultColor));
+            InternalLog(result.ToString().Colored(defaultColor));
         }
         else
         {
             unityContext.Post(_ =>
             {
-                Log(result.ToString().Colored(defaultColor));
+                InternalLog(result.ToString().Colored(defaultColor));
             }, null);
         }
 
@@ -294,13 +294,13 @@ public static partial class DL
 
         if (Thread.CurrentThread == mainThread)
         {
-            Log(result.ToString().Colored(defaultColor));
+            InternalLog(result.ToString().Colored(defaultColor));
         }
         else
         {
             unityContext.Post(_ =>
             {
-                Log(result.ToString().Colored(defaultColor));
+                InternalLog(result.ToString().Colored(defaultColor));
             }, null);
         }
     }

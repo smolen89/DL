@@ -586,7 +586,7 @@ public static partial class DL
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    private static void Log(string message)
+    private static void InternalLog(string message)
     {
         // Zmiana wyświetlania StackTrace dla unity
         var stackTraceState = Application.GetStackTraceLogType(LogType.Log);
@@ -597,7 +597,7 @@ public static partial class DL
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    private static void Line(string message)
+    private static void InternalLine(string message)
     {
         // Zmiana wyświetlania StackTrace dla unity
         var stackTraceState = Application.GetStackTraceLogType(LogType.Log);
