@@ -7,6 +7,7 @@
 /[Oo]bj/
 /[Bb]uild/
 /[Bb]uilds/
+/[Bb]in/
 /[Ll]ogs/
 /[Uu]ser[Ss]ettings/
 
@@ -16,8 +17,6 @@
 
 # Recordings can get excessive in size
 /[Rr]ecordings/
-
-
 
 # Visual Studio cache directory
 .vs/
@@ -43,13 +42,8 @@ ExportedObj/
 *.opendb
 *.VC.db
 
-
-
 # Builds
 *.apk
 *.aab
 *.unitypackage
 *.app
-/[Bb]uild*/
-/[Bb]in/
-
