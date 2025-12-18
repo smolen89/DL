@@ -50,4 +50,5 @@ ExportedObj/
 *.aab
 *.unitypackage
 *.app
+/[Bb]uild*/
 
