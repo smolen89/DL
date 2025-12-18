@@ -1,7 +1,9 @@
 using System;
+using System.Diagnostics;
 using System.Text;
 using System.Threading;
 using UnityEngine;
+using Debug = UnityEngine.Debug;
 
 public static partial class DL
 {
@@ -30,6 +32,7 @@ public static partial class DL
     /// ta metoda musi być szybka oraz łatwo pomijalna
     /// Najczęściej będzie używana do loppów i innych miejsc gdzie jest dużo danych do wyświetlenia.
     /// </summary>
+    [DebuggerHidden]
     public static void Line(object message)
     {
         if (!enabled) return;
@@ -68,6 +71,7 @@ public static partial class DL
     /// </summary>
     /// <param name="channel">Kanał logowania.</param>
     /// <param name="message">Wiadomość do zalogowania.</param>
+    [DebuggerHidden]
     public static void Line(string channel, object message)
     {
         if (!enabled) return;
@@ -110,6 +114,7 @@ public static partial class DL
     /// <param name="channel">Kanał logowania.</param>
     /// <param name="message">Wiadomość do zalogowania.</param>
     /// <param name="args">Argumenty do sformatowania wiadomości.</param>
+    [DebuggerHidden]
     public static void Line(string channel, object message, params object[] args)
     {
         if (!enabled) return;
@@ -156,6 +161,7 @@ public static partial class DL
     /// Loguje wiadomość w aplikacji.
     /// </summary>
     /// <param name="message">Wiadomość do zalogowania.</param>
+    [DebuggerHidden]
     public static void Log(object message)
     {
         if (!enabled) return;
@@ -202,6 +208,7 @@ public static partial class DL
     /// </summary>
     /// <param name="channel">Kanał logowania.</param>
     /// <param name="message">Wiadomość do zalogowania.</param>
+    [DebuggerHidden]
     public static void Log(string channel, object message)
     {
         if (!enabled) return;
@@ -253,6 +260,7 @@ public static partial class DL
     /// <param name="channel">Kanał logowania.</param>
     /// <param name="message">Wiadomość do zalogowania.</param>
     /// <param name="args">Argumenty do sformatowania wiadomości.</param>
+    [DebuggerHidden]
     public static void Log(string channel, object message, params object[] args)
     {
         if (!enabled) return;
@@ -309,6 +317,7 @@ public static partial class DL
     /// Informacje są zazwyczaj używane do logowania ogólnych informacji, które nie są błędami ani ostrzeżeniami.
     /// </summary>
     /// <param name="message">Wiadomość do zalogowania.</param>
+    [DebuggerHidden]
     public static void LogInfo(object message)
     {
         if (!enabled) return;
@@ -356,6 +365,7 @@ public static partial class DL
     /// </summary>
     /// <param name="channel">Kanał logowania.</param>
     /// <param name="message">Wiadomość do zalogowania.</param>
+    [DebuggerHidden]
     public static void LogInfo(string channel, object message)
     {
         if (!enabled) return;
@@ -407,6 +417,7 @@ public static partial class DL
     /// <param name="channel">Kanał logowania.</param>
     /// <param name="message">Wiadomość do zalogowania.</param>
     /// <param name="args">Argumenty do sformatowania wiadomości.</param>
+    [DebuggerHidden]
     public static void LogInfo(string channel, object message, params object[] args)
     {
         if (!enabled) return;
@@ -463,6 +474,7 @@ public static partial class DL
     /// Ostrzeżenia są zazwyczaj używane do logowania sytuacji, które mogą być problematyczne, ale nie są krytyczne.
     /// </summary>
     /// <param name="message">Wiadomość do zalogowania.</param>
+    [DebuggerHidden]
     public static void LogWarning(object message)
     {
         if (!enabled) return;
@@ -517,6 +529,7 @@ public static partial class DL
     /// </summary>
     /// <param name="channel">Kanał, z którego pochodzi ostrzeżenie.</param>
     /// <param name="message">Wiadomość do zalogowania.</param>
+    [DebuggerHidden]
     public static void LogWarning(string channel, object message)
     {
         if (!enabled) return;
@@ -568,6 +581,7 @@ public static partial class DL
     /// <param name="channel">Kanał, z którego pochodzi ostrzeżenie.</param>
     /// <param name="message">Wiadomość do zalogowania.</param>
     /// <param name="args">Argumenty do sformatowania wiadomości.</param>
+    [DebuggerHidden]
     public static void LogWarning(string channel, object message, params object[] args)
     {
         if (!enabled) return;
@@ -624,6 +638,7 @@ public static partial class DL
     /// Błędy są zazwyczaj używane do logowania sytuacji, które są krytyczne i wymagają natychmiastowej uwagi.
     /// </summary>
     /// <param name="message">Wiadomość do zalogowania.</param>
+    [DebuggerHidden]
     public static void LogError(object message)
     {
         if (!enabled) return;
@@ -670,6 +685,7 @@ public static partial class DL
     /// </summary>
     /// <param name="channel">Kanał logowania.</param>
     /// <param name="message">Wiadomość do zalogowania.</param>
+    [DebuggerHidden]
     public static void LogError(string channel, object message)
     {
         if (!enabled) return;
@@ -720,6 +736,7 @@ public static partial class DL
     /// <param name="channel">Kanał logowania.</param>
     /// <param name="message">Wiadomość do zalogowania.</param>
     /// <param name="args">Argumenty do sformatowania wiadomości.</param>
+    [DebuggerHidden]
     public static void LogError(string channel, object message, params object[] args)
     {
         if (!enabled) return;
@@ -776,6 +793,7 @@ public static partial class DL
     /// Jeśli aplikacja nie jest w trybie debugowania, to zapis do konsoli jest pomijany.
     /// </summary>
     /// <param name="exception">Wyjątek do zapisania.</param>
+    [DebuggerHidden]
     public static void LogException(Exception exception)
     {
         if (!enabled) return;
@@ -800,6 +818,7 @@ public static partial class DL
     /// <summary>
     /// Wyświetla separator w konsoli Unity, oraz zapisuje do pliku.
     /// </summary>
+    [DebuggerHidden]
     public static void Separator()
     {
         if (!enabled) return;
@@ -827,6 +846,7 @@ public static partial class DL
     /// <summary>
     /// Wyświetla StackTrace w konsoli Unity, oraz zapisuje do pliku.
     /// </summary>
+    [DebuggerHidden]
     public static void StackTrace()
     {
         if (!enabled) return;

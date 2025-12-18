@@ -10,6 +10,6 @@ public partial class DL
         public const string VersionInfo = "DL " + Version + " (" + VersionDate + ")";
         public const string NameApplicationInfoShort = "DL " + Version;
         public const string NameApplication = "Debug Logger";
-        public const string FullNameApplication = "Debbug Logger (DL)" + Version + " (" + VersionDate + ")";
+        public const string FullNameApplication = "Debbug Logger (DL) " + Version + " (" + VersionDate + ")";
     }
 }
