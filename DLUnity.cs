@@ -832,13 +832,15 @@ public static partial class DL
         if (!Settings.All_ShowInUnity) return;
         if (Thread.CurrentThread == mainThread)
         {
-            Debug.Log(separator);
+            InternalLine(separator);
+            //Debug.Log(separator);
         }
         else
         {
             unityContext.Post(_ =>
             {
-                Debug.Log(separator);
+                InternalLine(separator);
+                //Debug.Log(separator);
             }, null);
         }
     }
