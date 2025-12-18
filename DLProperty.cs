@@ -4,7 +4,7 @@ using System.Text;
 using System.Threading;
 
 
-public partial class DL
+public static partial class DL
 {
     /// <summary>
     /// Struktura DateTimeFormat zawiera predefiniowane formaty daty i czasu do użycia w aplikacji.
@@ -420,7 +420,7 @@ public partial class DL
     /// <param name="length">Docelowa długość.</param>
     /// <param name="truncate">Czy obcinać tekst, jeśli jest za długi.</param>
     /// <returns>Tekst o zadanej długości.</returns>
-    private static string SetLength(this string source, int length, bool truncate = false)
+    public static string SetLength(this string source, int length, bool truncate = false)
     {
         if (source.Length > length)
         {
@@ -450,7 +450,7 @@ public partial class DL
     /// <param name="length">Docelowa długość.</param>
     /// <param name="truncate">Czy obcinać tekst, jeśli jest za długi.</param>
     /// <returns>Tablica tekstów o zadanej długości.</returns>
-    private static string[] SetLength(this string[] source, int length, bool truncate = false)
+    public static string[] SetLength(this string[] source, int length, bool truncate = false)
     {
         string[] temp = new string[source.Length];
         for (int i = 0; i < source.Length; i++)
