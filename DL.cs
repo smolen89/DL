@@ -604,6 +604,7 @@ public static partial class DL
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [System.Diagnostics.DebuggerHidden]
     private static void InternalLog(string message)
     {
         // Zmiana wyświetlania StackTrace dla unity
@@ -615,6 +616,7 @@ public static partial class DL
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [System.Diagnostics.DebuggerHidden]
     private static void InternalLine(string message)
     {
         // Zmiana wyświetlania StackTrace dla unity
