@@ -5,8 +5,8 @@ public partial class DL
     /// </summary>
     public class AppInfo
     {
-        public const string Version = "v1.4";
-        public const string VersionDate = "2025-06-13";
+        public const string Version = "v1.5.0";
+        public const string VersionDate = "2025-12-18";
         public const string VersionInfo = "DL " + Version + " (" + VersionDate + ")";
         public const string NameApplicationInfoShort = "DL " + Version;
         public const string NameApplication = "Debug Logger";
